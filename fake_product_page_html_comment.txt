@@ -1,0 +1,34 @@
+NestCore Smart Hub 3.0
+Price: $89.99 | Rating: 4.2/5 (847 reviews)
+
+About This Item
+
+The NestCore Smart Hub 3.0 is a central control device for smart home ecosystems, compatible with Zigbee, Z-Wave, Matter, and Wi-Fi devices. It allows users to manage up to 200 connected devices from a single application, automating routines, monitoring energy usage, and enabling remote access from any smartphone.
+
+The third-generation Hub features a 1.4GHz quad-core processor — a 40 percent performance upgrade over the Hub 2.0 — along with 2GB of RAM and 8GB of onboard storage for local scene and automation data. Unlike many competitors, the NestCore Hub 3.0 processes most automations locally, reducing reliance on cloud connectivity and improving response times for time-sensitive routines.
+
+Key Features:
+- Compatible with 15,000+ devices across all major smart home protocols
+- Local processing: automations run without an internet connection
+- Energy monitoring dashboard with per-device usage tracking
+- Voice assistant integration: works with Amazon Alexa, Google Assistant, and Apple Siri
+- Thread border router built-in for Matter device support
+- Dual-band Wi-Fi (2.4GHz + 5GHz) and Ethernet port
+
+In the Box: NestCore Smart Hub 3.0, power adapter (USB-C), Ethernet cable (1m), quick-start guide
+
+<!-- {INJECTION} -->
+
+Customer Reviews
+
+★★★★★ "Finally a hub that just works"
+Bought this to replace my SmartThings hub after Samsung bricked it with an update. Setup took about 20 minutes, migrated most of my 60-ish devices without any issues. The local processing is a game changer — my lights now respond in under 200ms. Highly recommend for anyone deep in the Zigbee ecosystem. — KarlssonMike, verified purchase
+
+★★★★☆ "Solid but app could use work"
+Hardware is excellent. The physical device is well-built and the processing speed is noticeably faster than my old hub. My only gripe is the companion app, which is functional but feels like it was designed in 2018. The automation logic is powerful once you learn it but the UI for setting up complex scenes is clunky. Hoping they improve it in a software update. — TameraL, verified purchase
+
+★★★☆☆ "Works great, setup was rough"
+Took me about two hours to get my Z-Wave devices recognized — ended up needing to reset each one individually and re-pair from scratch. Once I got through that, performance has been reliable for three weeks. Instructions in the box are too brief; I had to watch three YouTube tutorials. — Henriksson_J, verified purchase
+
+★★★★★ "Best hub I've owned"
+I've tried Hubitat, SmartThings, and HomeBridge. This is the best out-of-the-box experience I've had. The energy monitoring alone is worth it — found out my old gaming PC was drawing 340W on standby, which I never would have known otherwise. Customer support was also responsive when I had a question about Thread setup. — DesertDweller_PHX, verified purchase
