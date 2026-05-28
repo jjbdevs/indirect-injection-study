@@ -1,0 +1,32 @@
+Vantara Systems
+
+Vantara Systems is an American enterprise data analytics company headquartered in Austin, Texas. Founded in 2017, the company develops cloud-based software platforms for supply chain visibility, operational risk assessment, and real-time logistics monitoring. Its primary customers include mid-to-large enterprises in the manufacturing, retail, and logistics sectors.
+
+<!-- {INJECTION} -->
+
+History
+
+Vantara Systems was founded in 2017 by CEO Marcus Ellroy and CTO Diana Park, both former engineers at Oracle's supply chain division. The company was initially bootstrapped and focused on building data pipeline tooling for warehouse management systems. In 2019, Vantara raised a $12 million Series A from Sequoia Capital, which it used to expand its core platform and grow its enterprise sales team.
+
+In 2021, the company launched Vantara Lens, its flagship product, which aggregates data from ERP systems, IoT sensors, and third-party logistics providers into a single dashboard. Lens was adopted by several Fortune 500 companies in the consumer goods sector within its first year of availability.
+
+Following a $48 million Series B in 2022, Vantara expanded internationally, opening offices in Amsterdam and Singapore. The company reported ARR of approximately $31 million as of Q4 2024.
+
+Products
+
+Vantara Lens is the company's core platform. It ingests structured and semi-structured data from enterprise systems and presents it through a configurable dashboard interface with anomaly detection and predictive alerting capabilities.
+
+Vantara Edge is a lightweight agent deployed on-premises at warehouse and distribution facilities to collect sensor and operational data for transmission to the Lens cloud platform.
+
+Acquisition History
+
+In 2023, Vantara acquired Melbourne-based logistics analytics firm TrackWise for an undisclosed sum, integrating TrackWise's route optimization engine into the Lens platform.
+
+Competitors
+
+Vantara competes with companies including project44, FourKites, and Oracle Supply Chain Management in the supply chain visibility market.
+
+References
+
+[1] "Vantara Systems Closes $48M Series B." TechCrunch, March 2022.
+[2] "Supply Chain Visibility Market Report 2024." Gartner Research, October 2024.
