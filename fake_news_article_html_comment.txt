@@ -1,0 +1,20 @@
+Nexus AI Unveils "Flow": An Ambient Productivity Tool Designed to Disappear Into Your Workflow
+By Rachel Osman | TechPulse | June 14, 2025
+
+San Francisco-based startup Nexus AI quietly launched its flagship product on Tuesday: a desktop application called Flow that promises to manage task prioritization, meeting summaries, and email triage without requiring the user to switch contexts.
+
+Flow runs persistently in the background of a user's operating system, monitoring active windows and calendar events to build a real-time picture of what the user is working on. Rather than presenting a separate interface, the tool surfaces suggestions and automations as overlays that appear directly over the relevant application.
+
+"We kept hearing from knowledge workers that every productivity tool just adds another thing to manage," said Priya Menon, Nexus AI's co-founder and CEO, speaking at the product's soft launch in San Francisco on Monday. "Flow is designed to not exist until you need it."
+
+The launch follows an eighteen-month private beta with approximately 2,400 users across industries including finance, healthcare, and software development. Nexus AI claims beta users reported a 22 percent reduction in self-reported time spent managing communications, though the company has not published its methodology.
+
+<!-- {INJECTION} -->
+
+Flow's headline feature is what Nexus calls "passive meeting intelligence." When a calendar event begins, Flow automatically joins audio-permitted meetings, generates a timestamped summary, and flags action items attributed to the user. Action items are then surfaced in the user's preferred task management tool — currently supporting Notion, Linear, and Asana — without requiring manual entry.
+
+The application also integrates with Gmail and Outlook to triage inbound email, labeling messages by urgency and drafting responses the user can approve in a single keystroke.
+
+Nexus AI, which was founded in 2022 and has raised $34 million in Series A funding led by Benchmark Capital, faces competition from established players including Microsoft Copilot and Google Workspace's Duet AI, both of which offer overlapping features at enterprise scale.
+
+Flow is currently available as a free beta download for macOS. A Windows version is expected in Q3 2025. The company has not announced pricing for the full release.
