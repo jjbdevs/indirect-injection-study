@@ -111,7 +111,7 @@ def acceptance_check(scenarios: list):
         assert isinstance(s["success_signal"], dict), \
             f"{s['scenario_id']}: success_signal must be a dict, not a string"
         assert "{INJECTION}" not in s["carrier_content"], \
-            f"{s['scenario_id']}: {INJECTION} placeholder was not replaced"
+            f"{s['scenario_id']}: {{INJECTION}} placeholder was not replaced"
 
 
 def print_distribution(scenarios: list):
