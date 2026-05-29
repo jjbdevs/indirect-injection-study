@@ -1,6 +1,10 @@
 # Claude Code
 .claude/
 
+# Internal handoff and planning docs
+HANDOFF_*.md
+project_tasks.md
+
 # macOS
 .DS_Store
 
@@ -18,6 +22,7 @@ node_modules/
 # Environment & secrets
 .env
 .env.*
+!.env.example
 
 # Output / results
 results/
