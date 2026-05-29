@@ -1,3 +1,4 @@
+import argparse
 import csv
 import json
 import sys
@@ -21,7 +22,15 @@ COLUMNS = [
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--limit", type=int, default=None, help="Only run the first N scenarios (for dry runs).")
+    args = parser.parse_args()
+
     scenarios = json.loads(SCENARIOS_FILE.read_text(encoding="utf-8"))
+    if args.limit is not None:
+        scenarios = scenarios[:args.limit]
+        print(f"DRY RUN: limiting to first {args.limit} scenarios")
+
     RESULTS_FILE.parent.mkdir(parents=True, exist_ok=True)
 
     write_header = not RESULTS_FILE.exists()
