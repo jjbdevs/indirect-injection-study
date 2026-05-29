@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from dotenv import load_dotenv
 load_dotenv()
 
-JUDGE_MODEL = "claude-haiku-4-5-20251001"
+JUDGE_MODEL = "claude-sonnet-4-6"
 
 
 @dataclass
