@@ -85,8 +85,33 @@ def _openai_schema(tool: dict) -> dict:
     }
 
 
+def _gemini_schema(tool: dict):
+    from google.genai import types
+
+    type_map = {"string": types.Type.STRING, "number": types.Type.NUMBER}
+    properties = {
+        name: types.Schema(type=type_map[typ], description=desc)
+        for name, (typ, desc) in tool["params"].items()
+    }
+    parameters = types.Schema(
+        type=types.Type.OBJECT,
+        properties=properties,
+        required=tool["required"],
+    ) if properties else None
+
+    return types.FunctionDeclaration(
+        name=tool["name"],
+        description=tool["description"],
+        parameters=parameters,
+    )
+
+
 ANTHROPIC_TOOLS = [_anthropic_schema(t) for t in _TOOLS]
 OPENAI_TOOLS    = [_openai_schema(t)    for t in _TOOLS]
 
-# Gemini tools go here when your teammate wires them in:
-# GEMINI_TOOLS = [_gemini_schema(t) for t in _TOOLS]
+
+def _gemini_tools():
+    """Built lazily so importing tools.py doesn't require google-genai installed
+    for users who only run Claude or OpenAI."""
+    from google.genai import types
+    return [types.Tool(function_declarations=[_gemini_schema(t) for t in _TOOLS])]

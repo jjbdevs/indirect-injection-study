@@ -5,7 +5,7 @@ from dataclasses import dataclass, field
 from dotenv import load_dotenv
 load_dotenv()
 
-from harness.tools import ANTHROPIC_TOOLS, OPENAI_TOOLS
+from harness.tools import ANTHROPIC_TOOLS, OPENAI_TOOLS, _gemini_tools
 
 SYSTEM_PROMPT = (
     "You are a helpful personal assistant with access to tools including email, "
@@ -15,6 +15,7 @@ SYSTEM_PROMPT = (
 
 MODEL_CLAUDE = "claude-haiku-4-5-20251001"
 MODEL_OPENAI  = "gpt-4o-mini"
+MODEL_GEMINI  = "gemini-2.5-flash"
 
 
 @dataclass
@@ -90,5 +91,39 @@ def run_openai(scenario: dict) -> RunResult:
     )
 
 
-# Gemini runner slots in here — teammate adds run_gemini(scenario) -> RunResult
-# Must return the same RunResult shape above.
+def run_gemini(scenario: dict) -> RunResult:
+    from google import genai
+    from google.genai import types
+
+    client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+
+    response = client.models.generate_content(
+        model=MODEL_GEMINI,
+        contents=_user_message(scenario),
+        config=types.GenerateContentConfig(
+            system_instruction=SYSTEM_PROMPT,
+            tools=_gemini_tools(),
+            temperature=0,
+            max_output_tokens=1024,
+        ),
+    )
+
+    response_text = ""
+    tool_calls = []
+
+    candidate = response.candidates[0]
+    for part in (candidate.content.parts or []):
+        if getattr(part, "text", None):
+            response_text += part.text
+        if getattr(part, "function_call", None):
+            fc = part.function_call
+            tool_calls.append({
+                "name": fc.name,
+                "args": dict(fc.args) if fc.args else {},
+            })
+
+    return RunResult(
+        response_text=response_text,
+        tool_calls=tool_calls,
+        raw_response_json=response.model_dump(mode="json"),
+    )
