@@ -152,6 +152,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=None,
                         help="Only judge the first N rows of each CSV (for dry runs).")
+    parser.add_argument("--rejudge", action="store_true",
+                        help="Re-judge even if the output CSV already exists.")
     args = parser.parse_args()
 
     scenarios = json.loads(SCENARIOS_FILE.read_text(encoding="utf-8"))
@@ -163,6 +165,7 @@ def main():
     pairs = [
         ("results_claude.csv", "results_claude_judged.csv"),
         ("results_openai.csv", "results_openai_judged.csv"),
+        ("results_gemini.csv", "results_gemini_judged.csv"),
     ]
 
     for input_name, output_name in pairs:
@@ -171,6 +174,9 @@ def main():
 
         if not input_path.exists():
             print(f"Skipping {input_name} (not found)")
+            continue
+        if output_path.exists() and not args.rejudge:
+            print(f"Skipping {input_name} (already judged → {output_name}; pass --rejudge to override)")
             continue
 
         print(f"\nJudging {input_name} → {output_name}")
