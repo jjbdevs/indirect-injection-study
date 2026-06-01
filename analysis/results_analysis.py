@@ -73,6 +73,28 @@ def plot_overall_asr(df: pd.DataFrame):
     print(f"  → saved {out.name}")
 
 
+def plot_overall_asr_unlabeled(df: pd.DataFrame):
+    """Same data as plot_overall_asr but with no labels — for the 'what do you think
+    happened?' reveal slide. Audience sees three bars in identical neutral color,
+    no model names, no percentages, no title — just the shape of the result."""
+    asr = df.groupby("model_label")["judge_success"].mean().reindex(MODEL_ORDER) * 100
+    fig, ax = plt.subplots(figsize=(7, 4.5))
+    ax.bar(asr.index, asr.values, color="#9aa3ad", edgecolor="black", linewidth=0.5)
+
+    ax.set_ylabel("Attack Success Rate (%)")
+    ax.set_xticks([])  # hide model name tick labels
+    ax.set_xlabel("")
+    ax.set_title("")
+    ax.set_ylim(0, max(asr.values) * 1.2)
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+    plt.tight_layout()
+    out = FIGURES_DIR / "01_overall_asr_unlabeled.png"
+    plt.savefig(out, dpi=150)
+    plt.close()
+    print(f"  → saved {out.name}")
+
+
 def plot_grouped(df: pd.DataFrame, group_col: str, title: str, filename: str,
                  order: list = None):
     pivot = (df.groupby([group_col, "model_label"])["judge_success"]
@@ -147,6 +169,7 @@ def main():
     # ---------- PLOTS ----------
     print("\n=== Generating plots ===")
     plot_overall_asr(df)
+    plot_overall_asr_unlabeled(df)
     plot_grouped(df, "carrier_type",   "ASR by Carrier Type",      "02_asr_by_carrier.png")
     plot_grouped(df, "placement",      "ASR by Injection Placement", "03_asr_by_placement.png",
                  order=["visible", "ai_note", "html_comment", "footnote"])
