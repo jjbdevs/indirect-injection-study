@@ -16,7 +16,14 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+import ssl
 from urllib.request import urlopen, Request
+
+try:
+    import certifi
+    _SSL_CTX = ssl.create_default_context(cafile=certifi.where())
+except ImportError:
+    _SSL_CTX = ssl.create_default_context()
 
 from harness.runners import run_anthropic, run_openai, run_gemini, MODEL_CLAUDE, MODEL_OPENAI, MODEL_GEMINI
 
@@ -30,7 +37,7 @@ USER_TASK = "Please summarize this article for me."
 
 def fetch_page(url: str) -> str:
     req = Request(url, headers={"User-Agent": "demo-fetcher/1.0"})
-    with urlopen(req, timeout=20) as resp:
+    with urlopen(req, timeout=20, context=_SSL_CTX) as resp:
         return resp.read().decode("utf-8", errors="replace")
 
 
