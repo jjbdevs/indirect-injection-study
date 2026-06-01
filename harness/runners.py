@@ -91,14 +91,14 @@ def run_openai(scenario: dict) -> RunResult:
     )
 
 
-def run_gemini(scenario: dict) -> RunResult:
+def run_gemini(scenario: dict, model: str = MODEL_GEMINI) -> RunResult:
     from google import genai
     from google.genai import types
 
     client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 
     response = client.models.generate_content(
-        model=MODEL_GEMINI,
+        model=model,
         contents=_user_message(scenario),
         config=types.GenerateContentConfig(
             system_instruction=SYSTEM_PROMPT,
