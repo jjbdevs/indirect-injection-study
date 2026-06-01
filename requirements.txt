@@ -1,5 +1,7 @@
 anthropic
 openai
-google-generativeai
+google-genai
 pandas
 python-dotenv
+certifi
+matplotlib
