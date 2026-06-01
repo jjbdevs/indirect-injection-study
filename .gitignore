@@ -24,8 +24,8 @@ node_modules/
 .env.*
 !.env.example
 
-# Output / results
-results/
+# Output / results — track real eval CSVs but exclude dry-run tests and scratch dirs
+results/*_dryrun.csv
 output/
 logs/
 *.log
